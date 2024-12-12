@@ -224,6 +224,8 @@ class Graphic:
             self.ax.grid(True)
             self.ax.axvline(color='black', alpha=0.5)
             self.ax.axhline(color='black', alpha=0.5)
+            if not os.path.exists('history'):
+                os.makedirs('history')
             self.path = f'history/function{Graphic.__graphics}.png'
             plt.plot(xs, ys, color='black')
             plt.savefig(self.path)
